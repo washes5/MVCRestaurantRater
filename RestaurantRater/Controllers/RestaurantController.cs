@@ -66,6 +66,21 @@ namespace RestaurantRater.Controllers
             }
             return View(restaurant);
         }
+
+        //GET:  Restaurants/Detail
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            Restaurant restaurant = db.Restaurants.Find(id);
+            if (restaurant == null)
+            {
+                return HttpNotFound();
+            }
+            return View(restaurant);
+        }
         
         //GET:  Restaurant/Delete
         public ActionResult Delete(int? id)
