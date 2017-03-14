@@ -10,8 +10,8 @@
 <div>
     <h4>Restaurant</h4>
     <hr />
-</div>
-    <d1 class="d1-horizontal">
+
+    <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -31,7 +31,8 @@
             @Html.DisplayFor(model => model.Rating)
         </dd>
 
-    </d1>
+    </dl>
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -41,4 +42,4 @@
         </div>
     }
 
-
+</div>
